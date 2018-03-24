@@ -4,10 +4,11 @@
 		<?php 
 			include 'resources/bslinks.php';
 
+			//creating sql connection
 			$conn = new mysqli('localhost', 'root', 'root', 'friends');
 			if ($conn->connect_error) die($conn->connect_error);
 		
-			
+			// gathering data from table
 			$query = "select * from friends";
 			$result = $conn->query($query);
 			$finfo = $result->fetch_fields();
@@ -25,7 +26,7 @@
 						break;
 				}
 			}
-		?>
+		?>		
 		<link rel="stylesheet" href="css/main-php.css">
 	</head>
 	<body>

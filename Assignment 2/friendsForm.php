@@ -1,7 +1,5 @@
 <html>
 <head>
-
-
 	<script type="text/javascript">
 
 	// temp vars for validation
@@ -9,7 +7,7 @@
 	var l_name = ['30', 'Last name must be 30 characters or less.'];
 	var email = ['40', 'Email addreess must be 40 characters or less.'];
 	var favnumber = ['64', 'Favorite number must be a whole integer'];
-	var birthday = ['10', 'Birthday must be in proper date format (YYYY-MM-DD)'];
+	var birthday = ['', 'Birthday must be in proper date format (YYYY-MM-DD)'];
 	
 	// this javascript function checks form data for validation.
 	function validText(text, name) {
@@ -48,12 +46,12 @@
 		
 		$result = $conn->query($a);
 
-		$row = null; //in case no author data requested
+		$row = null; //in case no firends data requested
 
-		//get authors data if requested
-		if ($_GET['aid']) {
-			$aidq = "select * from friends where friend_id = " . $_GET['aid'];
-			$ar = $conn->query($aidq);
+		//get friends data if requested
+		if ($_GET['fid']) {
+			$fidq = "select * from friends where friend_id = " . $_GET['fid'];
+			$ar = $conn->query($fidq);
 			$row = $ar->fetch_assoc();
 		}
 	?>	
@@ -94,7 +92,7 @@
 					<div class="form-group">
 						<label for="birthday" class="control-label col-sm-3">Birthday</label>
 						<div class="col-sm-6">
-							<input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birthday  (YYYY-MM-DD)" onchange="validText(this.value, this.name)" value="<?=$row['birthday']?>" maxlength="10" required>
+							<input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birthday  (YYYY-MM-DD)" onchange="validText(this.value, this.name)" value="<?=$row['birthday']?>" required>
 						</div>
 					</div>
 					<div class="col-sm-4 col-sm-offset-2">
@@ -116,7 +114,7 @@
 						<thead><tr><th>Name</th><th>Email</th><th>Favorite #</th><th>Birthday</th></tr></thead>
 						<tbody>
 							<?php foreach ($result as $r): ?>
-								<tr><td><a href="friendsForm.php?aid=<?=$r['friend_id']?>"><?=$r['f_name'] . " " . $r['l_name']?></a></td><td><?=$r['email']?></td><td><?=$r['favnumber']?></td><td><?=$r['birthday']?></td></tr>
+								<tr><td><a href="friendsForm.php?fid=<?=$r['friend_id']?>"><?=$r['f_name'] . " " . $r['l_name']?></a></td><td><?=$r['email']?></td><td><?=$r['favnumber']?></td><td><?=$r['birthday']?></td></tr>
 							<?php endforeach ?>
 						</tbody>
 					</table>
