@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- CSS -->
+      <link rel="stylesheet" href="organization.css">
+      <style type="text/css">
+      </style>
+      <!-- Data -->
+      <script>
+         // Don't copy this to any other places in this file. You can just use the "organizations" variable to do your assignment. 
+         var organizations = [
+         	 {
+                 "Region": "East Asia & Pacific",
+                 "Country": "New Zealand",
+                 "Country Income Level": "High income",
+                 "Organization Name": "200 Square",
+                 "Organization Type": "For-profit",
+                 "Sectors": "Housing, construction & real estate",
+                 "Description": "200 Square is an online real estate agent in New Zealand.",        
+                 "City": "Wellington",
+                 "State/Region": "Wellington",
+                 "Founding Year": 2010,
+                 "Size": "1 to 10",
+                 "Type of Data Used": "Housing, Education",
+                 "profileID": "731"
+             },
+             {
+                 "Region": "Europe & Central Asia",
+                 "Country": "United Kingdom",
+                 "Country Income Level": "High income",
+                 "Organization Name": "21c Consultancy",
+                 "Organization Type": "For-profit",
+                 "Sectors": "IT and geospatial",
+                 "Description": "21c is ICT innovation consultancy which advises international actors, institutions and governments around the world on technological trends which can affect the way they deliver services.",        
+                 "City": "London",
+                 "State/Region": "",
+                 "Founding Year": 2015,
+                 "Size": "1 to 10",
+                 "Type of Data Used": "",
+                 "profileID": "1694"
+             },
+             {
+                 "Region": "Europe & Central Asia",
+                 "Country": "Russian Federation",
+                 "Country Income Level": "High income",
+                 "Organization Name": "2GIS",
+                 "Organization Type": "For-profit",
+                 "Sectors": "IT and geospatial",
+                 "Description": "2GIS is a city information service combined with a map. ",        
+                 "City": "Novosibirsk",
+                 "State/Region": "Novosibirsk Oblast",
+                 "Founding Year": 1999,
+                 "Size": "1000+",
+                 "Type of Data Used": "Transportation, Geospatial, Business",
+                 "profileID": "1025"
+             },
+             {
+                 "Region": "North America",
+                 "Country": "United States",
+                 "Country Income Level": "High income",
+                 "Organization Name": "2nd City Zoning",
+                 "Organization Type": "Nonprofit",
+                 "Sectors": "Housing, construction & real estate",
+                 "Description": "An Open City App, 2nd City Zoning is an interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout the city.",        
+                 "City": "Chicago",
+                 "State/Region": "Illinois",
+                 "Founding Year": 2013,
+                 "Size": "1 to 10",
+                 "Type of Data Used": "Housing",
+                 "profileID": "1693"
+             },
+             {
+                 "Region": "North America",
+                 "Country": "United States",
+                 "Country Income Level": "High income",
+                 "Organization Name": "3 Round Stones Inc",
+                 "Organization Type": "For-profit",
+                 "Sectors": "IT and geospatial",
+                 "Description": "3 Round Stones' Open Source platform is used by the Fortune 2000 and US Government Agencies to collect, publish and reuse data, both public and proprietary.",
+                 "City": "Arlington",
+                 "State/Region": "Virginia",
+                 "Founding Year": 2010,
+                 "Size": "1 to 10",
+                 "Type of Data Used": "Weather, Science and research, Health/healthcare, Geospatial, Environment, Energy, Demographic and social, Business",
+                 "profileID": "580"
+             },
+             {
+                 "Region": "North America",
+                 "Country": "United States",
+                 "Country Income Level": "High income",
+                 "Organization Name": "360 Yield Center",
+                 "Organization Type": "For-profit",
+                 "Sectors": "Agriculture",
+                 "Description": "Taking a 360-degree view of key yield-limiting variables, 360 Yield Center develops strategies for better-performing crops and better on-farm profits.",        
+                 "City": "Morton",
+                 "State/Region": "Illinois",
+                 "Founding Year": 2014,
+                 "Size": "51 to 200",
+                 "Type of Data Used": "Agriculture, Environment, Weather",
+                 "profileID": "1692"
+             },
+             {
+                 "Region": "Europe & Central Asia",
+                 "Country": "Denmark",
+                 "Country Income Level": "High income",
+                 "Organization Name": "3Strikes - City Stories",
+                 "Organization Type": "For-profit",
+                 "Sectors": "Arts, culture and tourism",
+                 "Description": "City Stories provides a platform that allows users to explore local stories and simultaneously contribute their own.",
+                 "City": "Aarhus",
+                 "State/Region": "Central Denmark Region",
+                 "Founding Year": 2015,
+                 "Size": "1 to 10",
+                 "Type of Data Used": "Arts and culture",
+                 "profileID": "2278"
+             },
+             {
+                 "Region": "Europe & Central Asia",
+                 "Country": "Finland",
+                 "Country Income Level": "High income",
+                 "Organization Name": "3Tier (Europe) ",
+                 "Organization Type": "For-profit",
+                 "Sectors": "Energy and climate",
+                 "Description": "3TIER is a global environmental and industrial measurement company providing weather-driven renewable energy risk assessment and forecasting for wind, solar, and hydro power projects.",        
+                 "City": "Helsinki",
+                 "State/Region": "Uusimaa",
+                 "Founding Year": 2012,
+                 "Size": "11 to 50",
+                 "Type of Data Used": "Other, Environment",
+                 "profileID": "952"
+             },
+             {
+                 "Region": "North America",
+                 "Country": "United States",
+                 "Country Income Level": "High income",
+                 "Organization Name": "5PSolutions",
+                 "Organization Type": "For-profit",
+                 "Sectors": "IT and geospatial",
+                 "Description": "5PSolutions are artisans of mobile platforms.",       
+                 "City": "Fairfax",
+                 "State/Region": "Virginia",
+                 "Founding Year": 2007,
+                 "Size": "1 to 10",
+                 "Type of Data Used": "Environment",
+                 "profileID": "534"
+             },
+             {
+                 "Region": "North America",
+                 "Country": "United States",
+                 "Country Income Level": "High income",
+                 "Organization Name": "AAA National",
+                 "Organization Type": "Other",
+                 "Sectors": "Transportation and logistics",
+                 "Description": "AAA provides services such as travel, automotive, insurance, financial, and discounts.",        
+                 "City": "Irving",
+                 "State/Region": "Texas",
+                 "Founding Year": 1902,
+                 "Size": "201 to 1000",
+                 "Type of Data Used": "Transportation",
+                 "profileID": "1691"
+             },
+             {
+                 "Region": "North America",
+                 "Country": "United States",
+                 "Country Income Level": "High income",
+                 "Organization Name": "AAASHTO",
+                 "Organization Type": "Other",
+                 "Sectors": "Transportation and logistics",
+                 "Description": "AASHTO works to educate the public and key decision makers about the critical role that transportation plays in securing a good quality of life and sound economy. AASHTO serves as a liaison between state departments of transportation and the Federal government.",
+                 "City": "Washington",
+                 "State/Region": "DC",
+                 "Founding Year": 1913,
+                 "Size": "51 to 200",
+                 "Type of Data Used": "Transportation",
+                 "profileID": "1690"
+             },
+             {
+                 "Region": "Latin America & Caribbean",
+                 "Country": "Chile",
+                 "Country Income Level": "High income",
+                 "Organization Name": "ABRELATAM",
+                 "Organization Type": "Nonprofit",
+                 "Sectors": "Governance",
+                 "Description": "ABRELATAM is an conference that seeks to accelerate the process of opening information through Open Data transparency and promote the Latin America.",        
+                 "City": "Santiago",
+                 "State/Region": "",
+                 "Founding Year": 2015,
+                 "Size": "",
+                 "Type of Data Used": "",
+                 "profileID": "1687"
+             }
+         	
+         ];
+      </script>
+   </head>
+   <body>
+      <!-- Feel free to add empty tags. Data shouldn't be here. -->
+      <h1>Organizations Table</h1>
+      <div id="org_table"></div>
+      <h1> Organizations' Stats Table</h1>
+      <div id="statsTable"></div>
+      <script type="text/javascript">
+         // this function deletes a table row corresponding to the button pressed
+         // it also call GenerateStatTable() to update the stat table.
+         function deleteRow(r) {
+             var i = r.parentNode.parentNode.rowIndex;
+             document.getElementById("myTable").deleteRow(i);
+             orgArray = orgArray.slice(0); // make copy
+             orgArray.splice(i, 1);
+            // document.getElementById("statsTable").remove();
+             GenerateStatTable();
+         }
+         
+         // checkUnique() counts how many unique countries are in the table
+         function checkUnique()  {
+            // counts array holds disticnt coutry names
+         	var counts = {};
+         	for (var i = 0; i < orgArray.length; i++) {
+         	    counts[orgArray[i][1]] = 1 + (orgArray[i][1] || 0);
+             }
+         	var size = Object.keys(counts).length;
+            // checks that "Country" is not in the array
+             if (counts.hasOwnProperty('Country')) {
+             	return (size - 1);
+             }
+             else{
+             	return size;
+             }
+         }
+         
+         // countCheck counts the number of instances a certain word appears in a table column
+         function countCheck(test)  {
+         	// setting vars for high income test
+         	if (test == 2) {
+         		check = "High income"
+         	}
+         	// setting vars for orgcount test
+         	if  (test == 3) {
+         		check = "Organization Name"
+         	}
+         	// settig vars for orgtype test
+         	if (test == 4) {
+         		check = "For-profit"
+         	}
+            // for each occurance of the check word, size increaments 1
+         	var size = 0;
+         	for (var i = 0; i < orgArray.length; i++) {
+         	    if (orgArray[i][test] == check){
+         	    	size++;
+         	    }
+             }
+         
+         	// setting return for orgcount test
+         	if  (test == 3) {
+         		size = orgArray.length - size;
+         	}
+         	return size;
+         }
+          
+         // This function generates the stats table and updates it when rows are deleted.
+         function GenerateStatTable() {
+          //Build an array for stat info
+          var orgStats = new Array();
+          orgStats.push(["# of Organizations", "# of unique countries", "# of high-income countries", "# of For-profit Org Types" ]);
+          orgStats.push([countCheck(3), checkUnique(1), countCheck(2), countCheck(4)]);
+         
+          //Create a HTML Table element.
+          var statTable = document.createElement("TABLE");
+          //setting id and properties
+          statTable.id = 'statsTable'
+         statTable.border = '1px solid black'
+          statTable.border = "1";
+         
+          //Get the count of columns.
+          var numColumns = orgStats[0].length;
+         
+          //Add the header row.
+          var row = statTable.insertRow(-1);
+          row.innerHTML = '<tr></tr>'
+          for (var i = 0; i < numColumns; i++) {
+              var headerCell = document.createElement("TH");
+              headerCell.innerHTML = '<th>' + orgStats[0][i] + '</th>';
+              row.appendChild(headerCell);
+          }
+         
+          //Add the data rows.
+          for (var i = 1; i < orgStats.length; i++) {
+              row = statTable.insertRow(-1);
+              for (var j = 0; j < numColumns; j++) {
+                  var cell = row.insertCell(-1);
+                  cell.innerHTML = '<td>' + orgStats[i][j] + '</td>'
+              }
+          }
+         
+          var statsTable = document.getElementById("statsTable");
+          statsTable.innerHTML = "";
+          statsTable.appendChild(statTable);
+         }
+         
+         // Creating a array out of the JSON data
+         // this first chunk of code gets the columns
+         var orgArray = new Array();
+         var keys = [];
+         for(var k in organizations[0]) keys.push(k);
+         orgArray.push(keys);
+         
+         // this fills the orgArray with all the value data
+         var index = [];
+         for(var k in organizations) index.push(k);
+         for (var j = 0; j < organizations.length; j++) {
+            values = organizations[index[j]];
+            v = [];
+            for(var key in values) {
+                  var val = values[key];
+                  v.push(val)
+            }
+            orgArray.push(v);
+         }
+         
+         	
+         //Create a HTML Table element.
+         var table = document.createElement("TABLE");
+         //setting id and properties
+         table.id = 'myTable'
+         table.border = '1px solid black' 
+         
+         //Get the count of columns.
+         var numColumns = orgArray[0].length;
+         
+         //Add the header row.
+         var row = table.insertRow(-1);
+         row.innerHTML = '<tr></tr>'
+         for (var i = 0; i < numColumns; i++) {
+             var headerCell = document.createElement("TH");
+             headerCell.innerHTML = '<th >' + orgArray[0][i] + '</th>';
+             row.appendChild(headerCell);
+         }
+         //this cde adds a clickable button to each row calling the deleteRow() funtion.
+         headerCell = document.createElement("TH");
+          headerCell.innerHTML = '<th><td><input type="button" value="Hide Row" onclick="deleteRow(this)"></td></th>';
+          row.appendChild(headerCell);
+         
+         
+         //Add the data rows.
+         for (var i = 1; i < orgArray.length; i++) {
+             row = table.insertRow(-1);
+             for (var j = 0; j < numColumns; j++) {
+                 var cell = row.insertCell(-1);
+                 cell.innerHTML = '<td>' + orgArray[i][j] + '</td>'
+             }
+            //this cde adds a clickable button to each row calling the deleteRow() funtion.
+             cell = row.insertCell(-1);
+           	cell.innerHTML =  '<td><input type="button" value="Hide Row" onclick="deleteRow(this)"></td>'
+         
+         }
+         
+         var org_table = document.getElementById("org_table");
+         org_table.innerHTML = "";
+         org_table.appendChild(table);
+         
+         // initializing stat table
+         GenerateStatTable();
+         
+      </script>
+   </body>
+</html>

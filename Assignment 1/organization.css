@@ -1,0 +1,43 @@
+/*
+################
+  Bryan Bingham
+
+  This CSS file is for table_data.html
+
+################
+*/
+
+
+ #org_table {
+     display: table;
+     margin: 0 auto;
+}
+ #statsTable {
+     display: table;
+     margin: 0 auto;
+}
+ div {
+     margin: auto;
+     align-self: center;
+}
+ h1 {
+     text-align: justify;
+     text-align: center;
+     text-decoration: underline;
+     text-shadow: 3px 2px red;
+     font-size: 40px;
+     padding: 2;
+}
+ tr:hover {
+    background-color: #DA70D6;
+}
+ tr {
+     background-color: #AFEEEE;
+     font-family: "Georgia";
+}
+ th {
+     background-color: #4CAF50;
+     color: white;
+     font-family: "Courier New";
+}
+ 
